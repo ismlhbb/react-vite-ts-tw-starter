@@ -9,7 +9,7 @@ import { Api, MediaType } from 'constants/api';
 
 export class ExampleService {
   private static api: AxiosInstance = Axios.create({
-    baseURL: Api.BaseURL,
+    baseURL: Api.BaseURL.toString(),
   });
 
   /**
