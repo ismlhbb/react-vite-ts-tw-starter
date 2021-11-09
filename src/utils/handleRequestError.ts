@@ -15,7 +15,7 @@ export const handleRequestError = (err: any, dispatch: Dispatch<any>): Meta => {
   };
 
   if (err.response && err.response.data && err.response.data.meta) {
-    import.meta.env.PROD && console.log(err.response.data);
+    import.meta.env.DEV && console.log(err.response.data);
 
     meta.code = err.response.data.meta.code;
     meta.message =

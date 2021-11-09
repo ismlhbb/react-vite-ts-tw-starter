@@ -7,7 +7,7 @@ export const store = configureStore({
     counter: counterReducer,
     example: exampleReducer,
   },
-  devTools: import.meta.env.PROD,
+  devTools: import.meta.env.DEV,
 });
 
 export type AppDispatch = typeof store.dispatch;
