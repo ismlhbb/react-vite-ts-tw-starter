@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Customize these variable */
+  /* https://github.com/adamwathan/tailwind-css-variable-text-opacity-demo */
+  --tw-clr-primary: 238, 66, 77;
+  --tw-clr-primary-darker: 190, 23, 31;
+
+  --clr-primary: rgb(var(--tw-clr-primary)); /* #ee424d */
+  --clr-primary-darker: rgb(var(--tw-clr-primary-darker)); /* #96171f */
+}
+
+@layer base {
+  .cursor-newtab {
+    // cursor: url('assets/icons/new-tab.png') 10 10, pointer;
+  }
+
+  h1 {
+    @apply lg:text-5xl text-4xl font-black font-primary;
+  }
+
+  h2 {
+    @apply lg:text-4xl text-3xl font-black font-primary;
+  }
+
+  h3 {
+    @apply lg:text-3xl text-2xl font-extrabold font-primary;
+  }
+
+  h4 {
+    @apply lg:text-2xl text-xl font-extrabold font-primary;
+  }
+
+  h5 {
+    @apply lg:text-xl text-lg font-extrabold font-primary;
+  }
+
+  h6 {
+    @apply lg:text-lg text-base font-bold font-primary;
+  }
+
+  p {
+    @apply text-base font-primary;
+  }
+
+  label {
+    @apply inline-block font-primary;
+  }
+
+  body {
+    @apply text-sm font-primary md:text-base;
+  }
+}
+
+svg {
+  @apply font-primary;
+}
+
+#nprogress {
+  pointer-events: none;
+}
+
+#nprogress .bar {
+  background: #ee424d;
+  position: fixed;
+  z-index: 1031;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+}
+
+.layout {
+  /* 750px */
+  /* max-width: 43.75rem; */
+
+  /* 1100px */
+  max-width: 68.75rem;
+  @apply w-11/12 mx-auto;
+}
+
+.bg-dark a.custom-link {
+  @apply border-gray-200 hover:border-gray-200/0;
+}
+
+/* Class to adjust with sticky footer */
+.min-h-main {
+  // @apply min-h-[calc(100vh-56px)];
+  min-height: calc(100vh - 56px);
+}
+
+@layer utilities {
+  .animated-underline {
+    background-image: linear-gradient(#33333300, #33333300),
+      linear-gradient(to right, var(--clr-primary), var(--clr-primary-darker));
+    background-size: 100% 2px, 0 2px;
+    background-position: 100% 100%, 0 100%;
+    background-repeat: no-repeat;
+    transition: 0.3s ease;
+    transition-property: background-size, color, background-color, border-color;
+  }
+  .animated-underline:hover,
+  .animated-underline:focus-visible {
+    background-size: 0 2px, 100% 2px;
+  }
+}
