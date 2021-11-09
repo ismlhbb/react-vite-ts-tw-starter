@@ -11,7 +11,7 @@ export const MediaType = {
  * List of API endpoints
  */
 export const Api = {
-  BaseURL: import.meta.env.VITE_APP_API_BASE_URL || '',
+  BaseURL: `${import.meta.env.VITE_APP_API_BASE_URL} || ''`,
   SAMPLE_DATA: '/api/sample-data',
   SAMPLE_DATA_BY_ID: (id: string) => `/api/sample-data/${id}`,
   GetPokeList: () => `/pokemon`,

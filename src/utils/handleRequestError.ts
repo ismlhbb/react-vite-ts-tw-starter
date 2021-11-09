@@ -15,7 +15,7 @@ export const handleRequestError = (err: any, dispatch: Dispatch<any>): Meta => {
   };
 
   if (err.response && err.response.data && err.response.data.meta) {
-    process.env.NODE_ENV !== 'production' && console.log(err.response.data);
+    import.meta.env.PROD && console.log(err.response.data);
 
     meta.code = err.response.data.meta.code;
     meta.message =
@@ -25,7 +25,7 @@ export const handleRequestError = (err: any, dispatch: Dispatch<any>): Meta => {
       console.log(meta);
     }
   } else {
-    process.env.NODE_ENV !== 'production' && console.log(err);
+    import.meta.env.PROD && console.log(err);
 
     meta.code = '';
     meta.message = '';
