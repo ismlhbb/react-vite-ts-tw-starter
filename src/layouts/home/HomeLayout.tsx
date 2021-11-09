@@ -1,14 +1,14 @@
 import * as React from 'react';
 import { Switch, Route } from 'react-router-dom';
-import NotFoundPage from 'pages/404';
 import PageLoadingBar from 'components/PageLoadingBar';
 import Header from 'components/header/Header';
 
-const Home = React.lazy(() => import('pages/home'));
-const CounterPage = React.lazy(() => import('pages/counter'));
-const ExamplePage = React.lazy(() => import('pages/example'));
+import NotFoundPage from 'pages/404';
+import HomePage from 'pages/home';
+import CounterPage from 'pages/counter';
+import ExamplePage from 'pages/example';
 
-function HomeLayout() {
+const HomeLayout = () => {
   return (
     <>
       <Header />
@@ -18,7 +18,7 @@ function HomeLayout() {
             <PageLoadingBar isFallback={false} />
             <React.Suspense fallback={<PageLoadingBar isFallback={true} />}>
               <Switch>
-                <Route exact path='/' component={Home} />
+                <Route exact path='/' component={HomePage} />
                 <Route exact path='/counter' component={CounterPage} />
                 <Route exact path='/example' component={ExamplePage} />
                 <Route path='*' component={NotFoundPage} />
@@ -29,6 +29,6 @@ function HomeLayout() {
       </main>
     </>
   );
-}
+};
 
-export default React.memo(HomeLayout);
+export default HomeLayout;
