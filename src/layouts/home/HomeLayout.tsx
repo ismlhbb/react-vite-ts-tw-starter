@@ -8,7 +8,7 @@ const Home = React.lazy(() => import('pages/home'));
 const CounterPage = React.lazy(() => import('pages/counter'));
 const ExamplePage = React.lazy(() => import('pages/example'));
 
-const HomeLayout = () => {
+function HomeLayout() {
   return (
     <>
       <Header />
@@ -29,6 +29,6 @@ const HomeLayout = () => {
       </main>
     </>
   );
-};
+}
 
-export default HomeLayout;
+export default React.memo(HomeLayout);
