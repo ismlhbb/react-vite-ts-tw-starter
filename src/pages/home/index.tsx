@@ -6,7 +6,7 @@ import UnstyledLink from 'components/links/UnstyledLink';
 const Data = {
   projectLink: 'https://github.com/ismlhbb/react-vite-ts-tw-starter',
   projectName: 'React Vite + Typescript + Tailwind + Redux Starter',
-  profileLink: 'https://ismailhabibi.netlify.app',
+  profileLink: 'https://www.ismlhbb.xyz',
   profileName: 'Ismail Habibi Herman',
   vercelDeployUrl:
     'https://vercel.com/import/git?s=https://github.com/ismlhbb/react-vite-ts-tw-starter',
