@@ -1,11 +1,11 @@
 import { AsyncThunk } from '@reduxjs/toolkit';
 import { AnyAction, Dispatch } from 'redux';
-import { Meta } from 'models/Status';
+import { Status } from 'models/Status';
 
 export interface ThunkAPI {
   dispatch: Dispatch<any>;
   state: any;
-  rejectValue: Meta;
+  rejectValue: Status;
 }
 
 type GenericAsyncThunk = AsyncThunk<unknown, unknown, ThunkAPI>;
