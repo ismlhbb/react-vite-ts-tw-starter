@@ -1,18 +1,18 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { Meta } from 'models/Meta';
+import { Status } from 'models/Status';
 import { ReduxUtils } from 'utils/redux';
 import { Pokemon } from 'models/Example';
 import { editExampleData, getExampleData } from './example.thunks';
 
 export interface ExampleState {
   currentRunningOperation: string;
-  meta: Meta;
+  status: Status;
   exampleData: Pokemon[] | unknown;
 }
 
 const initialState: ExampleState = {
   currentRunningOperation: 'idle',
-  meta: { code: '', message: '' },
+  status: { code: '', message: '' },
   exampleData: [],
 };
 
@@ -37,11 +37,11 @@ export const exampleSlice = createSlice({
       .addMatcher(ReduxUtils.isPendingAction(SLICE_NAME), (state, action) => {
         state.currentRunningOperation = action.type;
         state.exampleData = initialState.exampleData;
-        state.meta = initialState.meta;
+        state.status = initialState.status;
       })
       .addMatcher(ReduxUtils.isRejectedAction(SLICE_NAME), (state, action) => {
         state.currentRunningOperation = 'idle';
-        state.meta = {
+        state.status = {
           code: action.payload?.code || '',
           message: action.payload?.message || '',
         };

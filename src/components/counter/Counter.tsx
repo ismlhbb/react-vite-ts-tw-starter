@@ -2,7 +2,7 @@ import * as React from 'react';
 import { useAppSelector, useAppDispatch } from 'app/hooks';
 import { counterActions } from './counter.reducer';
 import * as counterThunks from './counter.thunks';
-import styles from './Counter.module.scss';
+import styles from './counter.module.scss';
 
 export function Counter() {
   const count = useAppSelector(counterThunks.selectCount);

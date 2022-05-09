@@ -1,7 +1,7 @@
 /**
  * List of media types
  */
-export const MediaType = {
+ export const MediaType = {
   APPLICATION_JSON: 'application/json',
   APPLICATION_URLENCODED: 'application/x-www-form-urlencoded',
   MULTIPART_FORM_DATA: 'multipart/form-data',

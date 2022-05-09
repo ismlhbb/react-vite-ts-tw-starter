@@ -39,8 +39,8 @@ export const editExampleData = createAsyncThunk<
       await ExampleService.editData(id, name, age);
     } catch (err: any) {
       return rejectWithValue({
-        code: err.response.data.meta.code,
-        message: err.response.data.meta.message,
+        code: err.response.data.status.code,
+        message: err.response.data.status.message,
       });
     }
   }

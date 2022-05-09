@@ -1,28 +1,28 @@
-import * as React from 'react';
-import { Switch, Route } from 'react-router-dom';
-import NotFoundPage from 'pages/404';
-import PageLoadingBar from 'components/PageLoadingBar';
-import Header from 'components/header/Header';
+import * as React from "react";
+import { Routes, Route } from "react-router-dom";
+import NotFoundPage from "pages/404";
+import Header from "components/header/Header";
+import PageLoadingBar from "components/PageLoadingBar";
 
-const Home = React.lazy(() => import('pages/home'));
-const CounterPage = React.lazy(() => import('pages/counter'));
-const ExamplePage = React.lazy(() => import('pages/example'));
+const HomePage = React.lazy(() => import("pages/home"));
+const CounterPage = React.lazy(() => import("pages/counter"));
+const ExamplePage = React.lazy(() => import("pages/example"));
 
 function HomeLayout() {
   return (
     <>
       <Header />
       <main>
-        <section className='bg-gray-50'>
-          <div className='layout'>
-            <PageLoadingBar isFallback={false} />
-            <React.Suspense fallback={<PageLoadingBar isFallback={true} />}>
-              <Switch>
-                <Route exact path='/' component={Home} />
-                <Route exact path='/counter' component={CounterPage} />
-                <Route exact path='/example' component={ExamplePage} />
-                <Route path='*' component={NotFoundPage} />
-              </Switch>
+        <section className="bg-gray-50">
+          <div className="layout">
+          <PageLoadingBar isFallback={false} />
+            <React.Suspense fallback={<PageLoadingBar isFallback />}>
+              <Routes>
+                <Route path="/" element={<HomePage />} />
+                <Route path="counter" element={<CounterPage />} />
+                <Route path="example" element={<ExamplePage />} />
+                <Route path="*" element={<NotFoundPage />} />
+              </Routes>
             </React.Suspense>
           </div>
         </section>
