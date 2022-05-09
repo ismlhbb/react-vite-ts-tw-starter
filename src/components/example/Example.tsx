@@ -2,14 +2,14 @@ import * as React from 'react';
 import { connect } from 'react-redux';
 import { useAppDispatch } from 'app/hooks';
 import { RootState } from 'app/store';
-import { Meta } from 'models/Meta';
+import { Status } from 'models/Status';
 import * as exampleThunks from './example.thunks';
 import Button from 'components/buttons/Button';
 import CustomLink from 'components/links/CustomLink';
 
 const Example: React.FC<LinkStateProps> = ({
   currentRunningOperation,
-  meta,
+  status,
   exampleData,
 }) => {
   const dispatch = useAppDispatch();
@@ -36,9 +36,9 @@ const Example: React.FC<LinkStateProps> = ({
           ))
         ) : currentRunningOperation != 'idle' ? (
           <p>Loading...</p>
-        ) : meta.message?.length && meta.code != 2000 ? (
+        ) : status.message?.length && status.code != 2000 ? (
           <p className='text-red-500'>
-            {meta.message} ({meta.code})
+            {status.message} ({status.code})
           </p>
         ) : undefined}
       </div>
@@ -48,13 +48,13 @@ const Example: React.FC<LinkStateProps> = ({
 
 interface LinkStateProps {
   currentRunningOperation: string;
-  meta: Meta;
+  status: Status;
   exampleData: any;
 }
 
 const mapStateToProps = (state: RootState): LinkStateProps => ({
   currentRunningOperation: state.example.currentRunningOperation,
-  meta: state.example.meta,
+  status: state.example.status,
   exampleData: state.example.exampleData,
 });
 

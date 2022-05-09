@@ -1,19 +1,19 @@
-import * as React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import HomeLayout from './layouts/home/HomeLayout';
-import ScrollRestoration from 'components/ScrollRestoration';
-import NotFoundPage from 'pages/404';
+import * as React from "react";
+import { Route, Routes } from "react-router-dom";
+import HomeLayout from "layouts/home/HomeLayout";
+import NotFoundPage from "pages/404";
+import ScrollRestoration from "components/ScrollRestoration";
 
-const App = () => {
+function App() {
   return (
-    <Router>
+    <>
       <ScrollRestoration />
-      <Switch>
-        <Route path='/' component={HomeLayout} />
-        <Route path='*' component={NotFoundPage} />
-      </Switch>
-    </Router>
+      <Routes>
+        <Route path="/*" element={<HomeLayout />} />
+        <Route path="*" element={<NotFoundPage />} />
+      </Routes>
+    </>
   );
-};
+}
 
 export default App;

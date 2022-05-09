@@ -1,6 +1,6 @@
 import { AsyncThunk } from '@reduxjs/toolkit';
 import { AnyAction, Dispatch } from 'redux';
-import { Meta } from 'models/Meta';
+import { Meta } from 'models/Status';
 
 export interface ThunkAPI {
   dispatch: Dispatch<any>;

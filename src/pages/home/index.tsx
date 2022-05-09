@@ -21,7 +21,7 @@ const Data = {
 export default function Home() {
   return (
     <div className='flex flex-col items-center justify-center text-center min-h-main'>
-      <h1>{Data.projectName}</h1>
+      <h3>{Data.projectName}</h3>
       <p className='mt-2 text-sm text-gray-700'>
         🔥 An opinionated React.js with Vite, Typescript, Tailwind and Redux
         Starter.
@@ -52,7 +52,7 @@ export default function Home() {
         </UnstyledLink>
       </div>
       <code className='p-2 mt-2 bg-gray-200 rounded-lg'>
-        npx degit ismlhbb/react-ts-tw-starter {'<YOUR_APP_NAME>'}
+        npx degit ismlhbb/react-vite-ts-tw-starter {'<YOUR_APP_NAME>'}
       </code>
       <ButtonLink
         className='mt-2'

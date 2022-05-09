@@ -1,8 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap');
 :root {
   /* Customize these variable */
   /* https://github.com/adamwathan/tailwind-css-variable-text-opacity-demo */
@@ -15,7 +15,7 @@
 
 @layer base {
   .cursor-newtab {
-    // cursor: url('assets/icons/new-tab.png') 10 10, pointer;
+    cursor: url('src/assets/icons/new-tab.png') 10 10, pointer;
   }
 
   h1 {
